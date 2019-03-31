@@ -1,7 +1,8 @@
 import { File } from './file';
 
 export const mockFiles: File[] = [
-  { name: 'some file' },
-  { name: 'some another file' },
-  { name: 'and another one' },
+  { name: '[JAVA][Effective Java 3rd Edition]' },
+  { name: 'DomainDrivenDesignQuicklyOnline' },
+  { name: 'zdjecie_1' },
+  { name: 'zdjecie_2' },
 ];
