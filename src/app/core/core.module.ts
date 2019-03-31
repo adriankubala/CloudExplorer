@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { FileService } from './file.service';
+import { MockFileService } from './mock-file.service';
+
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ],
-  providers: []
+  providers: [
+    { provide: FileService, useClass: MockFileService },
+  ]
 })
 export class CoreModule { }

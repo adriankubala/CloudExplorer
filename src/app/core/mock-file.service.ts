@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { File } from '../shared/file';
+import { MOCK_FILES } from '../shared/injection-tokens';
 import { FileService } from './file.service';
 
 @Injectable({
@@ -9,7 +10,7 @@ import { FileService } from './file.service';
 })
 export class MockFileService implements FileService {
 
-  constructor(private readonly files: File[]) { }
+  constructor(@Inject(MOCK_FILES) private readonly files: File[]) { }
 
   getAll(): Observable<File[]> {
     return of(this.copyFiles());
