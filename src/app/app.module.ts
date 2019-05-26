@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { FilesComponent } from './files/files.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FilesComponent } from './files/files.component';
     MatTableModule,
     MatButtonModule,
     CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
