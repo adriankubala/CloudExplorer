@@ -37,13 +37,13 @@ export class FileUploadComponent {
     const file = event.item(0);
 
     // Client-side validation example
-    if (file.type.split('/')[0] !== 'image') {
-      console.error('unsupported file type :( ');
-      return;
-    }
+    // if (file.type.split('/')[0] !== 'image') {
+    //   console.error('unsupported file type :( ');
+    //   return;
+    // }
 
     // The storage path
-    const path = `test/${new Date().getTime()}_${file.name}`;
+    const path = `${file.name}`;
     const fileRef = this.storage.ref(path);
 
     // Totally optional metadata
@@ -63,7 +63,7 @@ export class FileUploadComponent {
       tap(snap => {
         if (snap.bytesTransferred === snap.totalBytes) {
           // Update firestore on completion
-          this.db.collection('photos').add( { path, size: snap.totalBytes });
+          this.db.collection('files').add( { path, size: snap.totalBytes });
         }
       })
     );
